@@ -131,7 +131,7 @@ public class Principal {
                     case 2: 
                         int anyoNuevo;
                         
-                        System.out.println("ingresa el año del calendario");      
+                        System.out.println("ingresa el año del calendario");      //anyo
                         anyoNuevo = leer.nextInt();
                         calendario.modifCalendario(anyoNuevo);
                         System.out.println("El calendario ha sido actualizado");
