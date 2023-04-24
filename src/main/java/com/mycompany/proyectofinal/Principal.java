@@ -17,7 +17,7 @@ import java.util.Scanner;
 /**
  *
  * @author suris
- */
+ */ //PRINCIPAL
 public class Principal {
     
     public static Usuario usuario;
