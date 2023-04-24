@@ -112,24 +112,48 @@ public class Principal {
           Calendario calendario = new Calendario();
           calendario.setAnyoCalendario(2023);
           calendario.setIdCalendario(1);
-          
+          Scanner leer = new Scanner(System.in);
           //menu
           int opc = 0;
-          switch (opc){
-            case 1: //modifica admin
-                    calendario.agregarDia(dia);
-                    break;
-                case 2: //modifica a algun empleado
-                    calendario.modifCalendario(new ArrayList<Dia>(), tamanyo);
-                    break;
-                case 3:
-                    calendario.eliminarDia(dia);
-                    break;
-                case 4:
-                    calendario.mostrarCalendario();
-                    break;
+          do{
+              System.out.println("opcion 1 para agregar dia al calendario");
+              System.out.println("opcion 2 para modificar año del calendario");
+              System.out.println("opcion 3 para eliminar dia del calendario");
+              System.out.println("opcion 4 para mostrar calendario");
+              switch (opc){
+                    case 1: 
+                        if(calendario.buscarDia(calendario.getDiasCalendario(), dia) == false){
+                            calendario.agregarDia(dia);
+                            System.out.println("El dia ha sido agregado");
+                        }
+                            
+                        break;
+                    case 2: 
+                        int anyoNuevo;
+                        
+                        System.out.println("ingresa el año del calendario");      
+                        anyoNuevo = leer.nextInt();
+                        calendario.modifCalendario(anyoNuevo);
+                        System.out.println("El calendario ha sido actualizado");
+                        break;
+                    case 3:
+                        if(calendario.buscarDia(calendario.getDiasCalendario(), dia) == true)
+                            calendario.eliminarDia(dia);
+                            System.out.println("Se ha eliminado un dia");
+                        break;
+                    case 4:
+                        System.out.println("Mostrando calendario: ");
+                        calendario.mostrarCalendario();
+                        break;
+                        
+                    default:
+                        System.out.println("Opcion no válida");
+                        
+                        break;
             }
        
+          
+          }while(opc!=0);
           
          
           

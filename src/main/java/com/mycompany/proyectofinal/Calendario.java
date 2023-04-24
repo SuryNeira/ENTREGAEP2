@@ -4,6 +4,7 @@
  */
 package com.mycompany.proyectofinal;
 import java.util.ArrayList;
+import java.util.Date;
 /**
  *
  * @author suris
@@ -50,11 +51,20 @@ public class Calendario {
     
     //comportamientos
     
+    public boolean buscarDia(ArrayList<Dia> dias, Dia dia){
+        for (Dia dia1 : dias) {
+            if(dias.equals(dia)) {
+                return true;
+            }
+        }
+        return false;
+         
+    }
+    
     public void agregarDia(Dia nuevoDia){
         diasCalendario.add(nuevoDia);   
     }
-    public void modifCalendario(ArrayList<Dia> diaModif, int anyoNuevo){
-        diasCalendario = diaModif;
+    public void modifCalendario(int anyoNuevo){
         anyoCalendario = anyoNuevo;
     }
     public void eliminarDia(Dia diaEliminar){
