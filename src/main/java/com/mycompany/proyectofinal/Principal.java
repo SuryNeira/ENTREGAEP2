@@ -25,7 +25,7 @@ public class Principal {
     
     public static void InsertarDatosArchivos () throws FileNotFoundException {
         
-        String file = "src/test/java/estudiantes.txt";
+        String file = "src/test/java/estudiantes.csv";
         int i=0;
         
         try{
